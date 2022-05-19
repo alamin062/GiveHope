@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: montserrat;
+            background: linear-gradient(120deg, #E6E9ED, #E6E9ED);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .form_container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            background: white;
+        }
+        #top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+        .form_container h2 {
+            color: white;
+            text-align: center;
+            padding-left: 10px;
+            font: bold;
+        }
+
+        .form_container form {
+            box-sizing: border-box;
+        }
+        .form_container .title_container {
+           background-color: #20BBA6;
+
+        }
+
+        .form_container input {
+            border: 1px solid gray;
+            padding: 20px;
+            margin: 10px;
+            width: 550px;
+            border-radius: 5px;
+            display: block;
+            margin: auto;
+        }
+
+        .form_container label {
+            margin-left: 55px;
+        }
+
+        .btn {
+            width: 210px;
+            padding: 15px;
+            margin-top: 80px;
+            margin-bottom: 80px;
+            background-color: #20BBA6;
+            border: none;
+            color: white;
+            font: bold;
+            font-size: large;
+            display: block;
+            margin: auto;
+
+        }
+
+        .form_container .textBox {
+            border: 1px solid gray;
+            padding: 15px;
+            margin: 10px;
+            width: 550px;
+            border-radius: 5px;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form_container">
+        <div class="title_container" id="top">
+            <h2>Contract Us</h2>
+        </div><br><br><br>
+        <div>
+            <form action="/home/contacts" method="post"><br><br><br>
+                <label for="">Full Name</label><br><br>
+                <input type="text" placeholder="  " name="name"><br><br>
+                <label for="">Email</label><br><br>
+                <input type="text" placeholder="  " name="email"><br><br>
+                <label for="">Phone Number</label><br><br>
+                <input type="text" placeholder=" " name="phone"><br><br>
+                <label for="">Massage</label><br><br>
+                <textarea placeholder="" name="massage" class="textBox" id="" cols="50"
+                    rows="5"></textarea><br>
+                <button class="btn" type="submit">Send Massage</button><br><br>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
