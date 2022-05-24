@@ -14,6 +14,11 @@ const checkLogin = (req, res, next) => {
       if (res.locals.html) {
         res.locals.loggedInUser = decoded;
       }
+
+     // if(decoded.loggedInUser.role==='admin'){
+        //
+        //res.redirect("/")
+      //}
       next();
     } catch (err) {
       if (res.locals.html) {
@@ -29,8 +34,12 @@ const checkLogin = (req, res, next) => {
       }
     }
   } else {
+  console.log("Your are not currently loggedIn");
+  res.locals.loggedInUser = {};
+  next();
+
     if (res.locals.html) {
-      res.redirect("/");
+      // res.redirect("/");
     } else {
       res.status(401).json({
         error: "Authetication failure!",
@@ -46,7 +55,7 @@ const redirectLoggedIn = function (req, res, next) {
   if (!cookies) {
     next();
   } else {
-    res.redirect("/inbox");
+    res.redirect("/home");
   }
 };
 

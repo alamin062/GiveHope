@@ -1,112 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: montserrat;
-            background: linear-gradient(120deg, #E6E9ED, #E6E9ED);
-            height: 100vh;
-            overflow: hidden;
-        }
+    <title>GiveHope &mdash; By Sifat</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
 
-        .form_container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 700px;
-            background: white;
-        }
-        #top {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="/css/animate.css">
+	
+	<link rel="stylesheet" href="/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/css/magnific-popup.css">
 
-        .form_container h2 {
-            color: white;
-            text-align: center;
-            padding-left: 10px;
-            font: bold;
-        }
 
-        .form_container form {
-            box-sizing: border-box;
-        }
-        .form_container .title_container {
-           background-color: #20BBA6;
+	<link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="/css/jquery.timepicker.css">
 
-        }
-
-        .form_container input {
-            border: 1px solid gray;
-            padding: 20px;
-            margin: 10px;
-            width: 550px;
-            border-radius: 5px;
-            display: block;
-            margin: auto;
-        }
-
-        .form_container label {
-            margin-left: 55px;
-        }
-
-        .btn {
-            width: 210px;
-            padding: 15px;
-            margin-top: 80px;
-            margin-bottom: 80px;
-            background-color: #20BBA6;
-            border: none;
-            color: white;
-            font: bold;
-            font-size: large;
-            display: block;
-            margin: auto;
-
-        }
-
-        .form_container .textBox {
-            border: 1px solid gray;
-            padding: 15px;
-            margin: 10px;
-            width: 550px;
-            border-radius: 5px;
-            display: block;
-            margin: auto;
-        }
-    </style>
+	<link rel="stylesheet" href="/css/flaticon.css">
+	<link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
-    <div class="form_container">
-        <div class="title_container" id="top">
-            <h2>Contract Us</h2>
-        </div><br><br><br>
-        <div>
-            <form action="/home/contacts" method="post"><br><br><br>
-                <label for="">Full Name</label><br><br>
-                <input type="text" placeholder="  " name="name"><br><br>
-                <label for="">Email</label><br><br>
-                <input type="text" placeholder="  " name="email"><br><br>
-                <label for="">Phone Number</label><br><br>
-                <input type="text" placeholder=" " name="phone"><br><br>
-                <label for="">Massage</label><br><br>
-                <textarea placeholder="" name="massage" class="textBox" id="" cols="50"
-                    rows="5"></textarea><br>
-                <button class="btn" type="submit">Send Massage</button><br><br>
-            </form>
-        </div>
-    </div>
-</body>
 
-</html>
+	<div class="wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 d-flex align-items-center">
+					<p class="mb-0 phone pl-md-2">
+						<a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +08801706139595</a> 
+						<a href="#"><span class="fa fa-paper-plane mr-1"></span> sifat@email.com</a>
+					</p>
+				</div>
+				<div class="col-md-6 d-flex justify-content-md-end">
+					<div class="social-media">
+						<p class="mb-0 d-flex">
+							<a href="https://facebook.com" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+							<a href="https://twitter.com" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+							<a href="https://instagram.com" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+							<a href="https://dribbble.com" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">GiveHope</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+					<% if (loggedInUser && loggedInUser.username) { %>
+                        <li class="nav-item active"><a href="/home" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="/ngo" class="nav-link">NGOs</a></li>
+                        <li class="nav-item"><a href="/home/about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="/home/cause" class="nav-link">Causes</a></li>
+                        <li class="nav-item"><a href="/home/blog" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="/home/gallary" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="/home/contact" class="nav-link">Contact</a></li>
+                        <li class="nav-item cta"><a href="/donate" class="nav-link">Donate</a></li>
+                        <li class="nav-item"><a href="/" class="nav-link" onclick="logout()">Logout</a></li>
+                        <% } else { %>
+                            <li class="nav-item active"><a href="/home" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="/ngo" class="nav-link">NGOs</a></li>
+                            <li class="nav-item"><a href="/home/about" class="nav-link">About</a></li>
+                            <li class="nav-item"><a href="/home/cause" class="nav-link">Causes</a></li>
+                            <li class="nav-item"><a href="/home/blog" class="nav-link">Blog</a></li>
+                            <li class="nav-item"><a href="/home/gallary" class="nav-link">Gallery</a></li>
+                            <li class="nav-item"><a href="/home/contact" class="nav-link">Contact</a></li>
+                            <li class="nav-item cta"><a href="/donate" class="nav-link">Donate</a></li>
+                            <li class="nav-item"><a href="/" class="nav-link">Login</a></li>
+                            <% } %>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- END nav -->
+	
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-end">
+				<div class="col-md-9 ftco-animate pb-5">
+					<p class="breadcrumbs mb-2"><span class="mr-2"><a href="/home">Home /<i class="ion-ios-arrow-forward"></i></a></span> <span>Contact us <i class="ion-ios-arrow-forward"></i></span></p>
+					<h1 class="mb-0 bread">Contact us</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="wrapper">
+						<div class="row mb-5">
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+									<div class="icon bg-primary d-flex align-items-center justify-content-center">
+										<span class="fa fa-map-marker"></span>
+									</div>
+									<div class="text">
+										<p><span>Address:</span> 7/B, Rankin Street, Wari, Dhaka, BD</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+									<div class="icon bg-secondary d-flex align-items-center justify-content-center">
+										<span class="fa fa-phone"></span>
+									</div>
+									<div class="text">
+										<p><span>Phone:</span> <a href="tel://01706139595">+8801706139595</a></p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+									<div class="icon bg-tertiary d-flex align-items-center justify-content-center">
+										<span class="fa fa-paper-plane"></span>
+									</div>
+									<div class="text">
+										<p><span>Email:</span> <a href="mailto:sifat@mysite.com">sifat@mysite.com</a></p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+									<div class="icon bg-quarternary d-flex align-items-center justify-content-center">
+										<span class="fa fa-globe"></span>
+									</div>
+									<div class="text">
+										<p><span>Website</span> <a href="#">sifat.com</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row no-gutters">
+							<div class="col-md-7">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3 class="mb-4">Contact Us</h3>
+									<form method="POST" id="contactForm" name="contactForm" class="contactForm" action="/home/contact">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="label" for="name">Full Name</label>
+													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+												</div>
+											</div>
+											<div class="col-md-6"> 
+												<div class="form-group">
+													<label class="label" for="email">Email Address</label>
+													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="subject">Phone</label>
+													<input type="text" class="form-control" name="phone" id="subject" placeholder="Phone">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="#">Message</label>
+													<textarea name="massage" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="submit" value="Send Message" class="btn btn-primary">
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="col-md-5 d-flex align-items-stretch">
+								<div class="info-wrap w-100 p-5 img" style="background-image: url(images/sifat2.jpg);">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.6456424050093!2d90.3124088142993!3d23.866713790241363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1f7ed5f4193%3A0x8159af0d71ff7374!2sEastern%20University!5e0!3m2!1sen!2sbd!4v1650919635940!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+					<h2 class="footer-heading">GiveHope</h2>
+					<p>Give Hope to the People Need Most. Join Us & Serve the people.</p>
+					<ul class="ftco-footer-social p-0">
+						<li class="ftco-animate"><a href="https://twitter.com" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
+						<li class="ftco-animate"><a href="https://www.facebok.com" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
+						<li class="ftco-animate"><a href="https://www.instagram.com" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fa fa-instagram"></span></a></li>
+					</ul>
+					<p><a href="#" class="btn btn-quarternary">Donate Now</a></p>
+				</div>
+				<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+					<h2 class="footer-heading">Latest News</h2>
+					<div class="block-21 mb-4 d-flex">
+						<a class="img mr-4 rounded" style="background-image: url(images/image_1.jpg);"></a>
+						<div class="text">
+							<h3 class="heading"><a href="blog-single.html">Foods & Water Need in Rohingya Camp</a></h3>
+							<div class="meta">
+								<div><a href="#">April 20, 2022</a></div>
+								<div><a href="#">Admin</a></div>
+								<div><a href="#">19</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="block-21 mb-4 d-flex">
+						<a class="img mr-4 rounded" style="background-image: url(images/image_2.jpg);"></a>
+						<div class="text">
+							<h3 class="heading"><a href="blog-single.html">Sponsor a Bangladeshi Child</a></h3>
+							<div class="meta">
+								<div><a href="#">May 03, 2022</a></div>
+								<div><a href="#">Admin</a></div>
+								<div><a href="#">19</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
+					<h2 class="footer-heading">Quick Links</h2>
+					<ul class="list-unstyled">
+						<li><a href="index.html" class="py-2 d-block">Home</a></li>
+						<li><a href="about.html" class="py-2 d-block">About</a></li>
+						<li><a href="causes.html" class="py-2 d-block">Causes</a></li>
+						<li><a href="blog.html" class="py-2 d-block">Blog</a></li>
+						<li><a href="contact.html" class="py-2 d-block">Contact</a></li>
+						<li><a href="donate.html" class="py-2 d-block">Donation</a></li>
+					</ul>
+				</div>
+				<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+					<h2 class="footer-heading">Have a Questions?</h2>
+					<div class="block-23 mb-3">
+						<ul>
+							<li><span class="icon icon-map-marker"></span><span class="text">7/B, Rankin Street, Wari, Dhaka, BD</span></li>
+							<li><a href="#"><span class="icon icon-phone"></span><span class="text">+8801706139595</span></a></li>
+							<li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@sifat.com</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-5">
+				<div class="col-md-12 text-center">
+
+					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made  by <a href="https://sifat.com" target="_blank" >Sifat</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		
+		
+
+		<!-- loader -->
+		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="/js/popper.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/jquery.easing.1.3.js"></script>
+		<script src="/js/jquery.waypoints.min.js"></script>
+		<script src="/js/jquery.stellar.min.js"></script>
+		<script src="/js/jquery.animateNumber.min.js"></script>
+		<script src="/js/bootstrap-datepicker.js"></script>
+		<script src="/js/jquery.timepicker.min.js"></script>
+		<script src="/js/owl.carousel.min.js"></script>
+		<script src="/js/jquery.magnific-popup.min.js"></script>
+		<script src="/js/scrollax.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+		<script src="/js/google-map.js"></script>
+		<script src="/js/main.js"></script>
+		
+	</body>
+	</html>

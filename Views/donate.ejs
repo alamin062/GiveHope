@@ -190,23 +190,27 @@
               </div>
               <nav>
                   <ul class="menu">
-                      <% if (loggedInUser && loggedInUser.username) { %>
-                          <li class="active"><a href="/home">Home</a></li>
-                          <li><a href="/ngolist">NGOs</a></li>
-                          <li><a href="/">Gallary</a></li>
-                          <li><a href="/about">About</a></li>
-                          <li><a href="/home/contact">Contact</a></li>
-                          <li><a href="/donatenow">Donate Now</a></li>
-                          <li><a href="/"  onclick="logout()">Logout</a></li>
-                          <% } else { %>
-                              <li class="active"><a href="/home">Home</a></li>
-                              <li><a href="/ngolist">NGOs</a></li>
-                              <li><a href="/">Gallary</a></li>
-                              <li><a href="home/about">About</a></li>
-                              <li><a href="/home/contact">Contact</a></li>
-                              <li><a href="/donatenow">Donate Now</a></li>
-                              <li><a href="/" class="user_icon"> <i class="fas fa-user-circle"></i></a></li>
-                          <% } %>
+                    <% if (loggedInUser && loggedInUser.username) { %>
+                        <li class="nav-item active"><a href="/home" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="/ngo" class="nav-link">NGOs</a></li>
+                        <li class="nav-item"><a href="/home/about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="/home/cause" class="nav-link">Causes</a></li>
+                        <li class="nav-item"><a href="/home/blog" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="/home/gallary" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="/home/contact" class="nav-link">Contact</a></li>
+                        <li class="nav-item cta"><a href="/donate" class="nav-link">Donate</a></li>
+                        <li class="nav-item"><a href="/" class="nav-link" onclick="logout()">Logout</a></li>
+                        <% } else { %>
+                            <li class="nav-item active"><a href="/home" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="/ngo" class="nav-link">NGOs</a></li>
+                            <li class="nav-item"><a href="/home/about" class="nav-link">About</a></li>
+                            <li class="nav-item"><a href="/home/cause" class="nav-link">Causes</a></li>
+                            <li class="nav-item"><a href="/home/blog" class="nav-link">Blog</a></li>
+                            <li class="nav-item"><a href="/home/gallary" class="nav-link">Gallery</a></li>
+                            <li class="nav-item"><a href="/home/contact" class="nav-link">Contact</a></li>
+                            <li class="nav-item cta"><a href="/donate" class="nav-link">Donate</a></li>
+                            <li class="nav-item"><a href="/" class="nav-link">Login</a></li>
+                            <% } %>
                   </ul>
               </nav>
           </header>

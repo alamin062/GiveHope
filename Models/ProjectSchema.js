@@ -12,6 +12,10 @@ const ProjectSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    status:{
+        type: String,
+        required: true,
+    },
     project_details:{
         type: String,
         required: true,

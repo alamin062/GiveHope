@@ -7,7 +7,7 @@ const projectUpload = require("./../Middlewares/project/projectUpload");
 const {checkLogin} = require("./../Middlewares/common/checkLogin");
 const { postProject, getProject } = require("../Controller/projectController");
 
-router.get('/postproject', decorateHtmlResponse("Articles"),getProject);
+router.get('/postproject', decorateHtmlResponse("Articles"),checkLogin,getProject);
 router.post(
     '/',
     projectUpload,

@@ -5,21 +5,108 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: montserrat;
+            background: linear-gradient(120deg, #E6E9ED, #E6E9ED);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .form_container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            background: white;
+        }
+        #top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+        .form_container h3 {
+            color: white;
+            text-align: center;
+            padding-left: 10px;
+            font: bold;
+        }
+
+        .form_container form {
+            box-sizing: border-box;
+        }
+        .form_container .title_container {
+           background-color: #20BBA6;
+           padding: -20px;
+
+        }
+
+        .form_container input {
+            border: 1px solid gray;
+            padding: 10px;
+            margin: 10px;
+            width: 550px;
+            border-radius: 5px;
+            display: block;
+            margin: auto;
+        }
+
+        .form_container label {
+            margin-left: 65px;
+        }
+
+        .btn {
+            width: 210px;
+            padding: 15px;
+            margin-top: 80px;
+            margin-bottom: 80px;
+            background-color: #20BBA6;
+            border: none;
+            color: white;
+            font: bold;
+            font-size: large;
+            display: block;
+            margin: auto;
+
+        }
+
+        .form_container .textBox {
+            border: 1px solid gray;
+            padding: 15px;
+            margin: 10px;
+            width: 550px;
+            border-radius: 5px;
+            display: block;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-    <form action="/project" method="post" enctype="multipart/form-data">
-        <h2>Post your articles</h2><br>
-        <label for="">Project Title</label><br>
-        <input type="text" name="project_title"><br>
-        <label for="">NGO Name</label><br>
-        <input type="text" name="NGO_name"><br>
-        <label for="">Phone</label><br>
-        <input type="text" name="phone"><br>
-        <label for="">Project details</label><br>
-        <textarea name="project_details" id="" cols="30" rows="10"></textarea><br>
-        <label for="">Image</label><br>
-        <input type="file" name="images"><br>
-        <button type="submit" value="submit">Submit</button>
-    </form>
+    <div class="form_container">
+        <div class="title_container" id="top">
+            <h3>Post your own project</h3><br>
+        </div><br><br><br><br><br>
+        <div>
+          <form action="/project" method="post" enctype="multipart/form-data">
+                <label for="">Project Title</label><br>
+                <input type="text" name="project_title"><br>
+                <label for="">NGO Name</label><br>
+                <input type="text" name="NGO_name"><br>
+                <label for="">Phone</label><br>
+                <input type="text" name="phone"><br>
+                <input type="hidden" name="status" value="pending"><br>
+                <label for="">Project details</label><br>
+                <textarea class="textBox" name="project_details" id="" cols="30" rows="5"></textarea><br>
+                <label for="">Image</label><br>
+                <input type="file" name="images"><br>
+                <button class="btn" type="submit" value="submit">Submit</button><br><br>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

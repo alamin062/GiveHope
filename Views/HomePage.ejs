@@ -2,350 +2,990 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+    <title>GiveHope</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/animate.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
     <script src="./js/toastify.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0
-        }
-
-        body {
-            font-family: sans-serif, Arial !important;
-            -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-weight: normal;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            line-height: 150%;
-            margin-bottom: 2em;
-        }
-
-        .fix {
-            overflow: hidden;
-        }
-
-        .container_full {
-            width: 100%;
-        }
-
-        .container {
-            width: 1280px;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .bg_color {
-            background: #292929;
-        }
-
-        .logo {
-            float: left;
-        }
-
-        .logo h2 {
-            font-family: lato;
-            color: white;
-            font-weight: bold;
-            font-size: 40px;
-            padding-top: 20px;
-        }
-
-        header nav {
-            float: right;
-        }
-
-        header nav .menu {
-            list-style: none;
-        }
-
-        header nav .menu li {
-            float: left;
-            border-right: 1px solid #1D1D1D;
-        }
-
-        header nav .menu li:first-child {
-            border-left: 1px solid #1D1D1D;
-        }
-
-        header nav .menu li a {
-            color: white;
-            font-family: lato;
-            font-weight: bold;
-            font-size: 16px;
-            display: block;
-            padding: 50px 30px;
-            border-bottom: 5px solid #1E1E1E;
-        }
-
-        header nav .menu li a:hover {
-            border-bottom: 5px solid #6DD053;
-            color: #6DD053;
-        }
-
-        header nav .menu li.active a {
-            border-bottom: 5px solid #6DD053;
-            color: #6DD053;
-        }
-
-        .content_wrapper {
-            border-right: 1px solid #E1E0E0;
-            border-left: 1px solid #E1E0E0;
-            overflow: hidden;
-            padding-top: 75px;
-        }
-        .slider_top {
-            border-top: 5px solid #1E1E1E;
-            margin-top: -5px;
-        }
-
-        .slider_container img {
-            height: 600px;
-            width: 100%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .our_services {
-            text-align: center;
-            display: block;
-        }
-        .services .service_container {
-            position: relative;
-            height: 400px;
-            width: 300px;
-            margin: 20px;
-        }
-        .services .service_container img {
-            height: 50px;
-            width: 50px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .services .service_container h3 {
-            text-align: center;
-            font: bold;
-        }
-        .services .service_container p {
-            text-align: center;
-        }
-        .services {
-            display: flex;
-        }
-
-        .bg_footer {
-            background: #D2D2D2;
-        }
-
-        footer {
-            text-align: center;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            ;
-        }
-
-        footer h1 {
-            font-family: lato;
-            font-weight: bold;
-            font-size: 40px;
-            color: #292929;
-        }
-
-        footer p {
-            font-family: lato;
-            font-weight: regular;
-            font-size: 13px;
-            color: #a6a6a6;
-        }
-
-        footer .social_area ul {
-            list-style: none;
-        }
-
-        footer .social_area ul li {
-            display: inline-block;
-            margin: 0 10px;
-        }
-
-        footer .social_area ul li.facebook a {
-            display: block;
-            height: 40px;
-            width: 40px;
-            background: url(images/facebook.png) no-repeat;
-        }
-
-        footer .social_area ul li.facebook:hover a {
-            display: block;
-            height: 40px;
-            width: 40px;
-            background: url(images/search_icon.png) no-repeat;
-        }
-        
-    </style>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
 
 <body>
-    <!--section_1 logo and menu -->
 
-    <div class="container_full bg_color">
-        <div class="fix container">
-            <header>
-                <div class="logo">
-                    <h2>LOGO</h2>
+    <div class="wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-flex align-items-center">
+                    <p class="mb-0 phone pl-md-2">
+                        <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +08801745675423</a>
+                        <a href="#"><span class="fa fa-paper-plane mr-1"></span> xyz@email.com</a>
+                    </p>
                 </div>
-                <nav>
-                    <ul class="menu">
-                        <% if (loggedInUser && loggedInUser.username) { %>
-                            <li class="active"><a href="/home">Home</a></li>
-                            <li><a href="/ngolist">NGOs</a></li>
-                            <li><a href="/">Gallary</a></li>
-                            <li><a href="/about">About</a></li>
-                            <li><a href="/home/contact">Contact</a></li>
-                            <li><a href="/donate">Donate</a></li>
-                            <li><a href="/"  onclick="logout()">Logout</a></li>
-                            <% } else { %>
-                                <li class="active"><a href="/home">Home</a></li>
-                                <li><a href="/ngo">NGOs</a></li>
-                                <li><a href="/home/gallary">Gallary</a></li>
-                                <li><a href="home/about">About</a></li>
-                                <li><a href="/home/contact">Contact</a></li>
-                                <li><a href="/donate">Donate</a></li>
-                                <li><a href="/" class="user_icon"> <i class="fas fa-user-circle"></i></a></li>
+                <div class="col-md-6 d-flex justify-content-md-end">
+                    <div class="social-media">
+                        <p class="mb-0 d-flex">
+                            <a href="https://facebook.com"
+                                class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i
+                                        class="sr-only">Facebook</i></span></a>
+                            <a href="https://twitter.com" class="d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                            <a href="https://instagram.com"
+                                class="d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                            <a href="https://dribbble.com"
+                                class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i
+                                        class="sr-only">Dribbble</i></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">GiveHope</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <% if (loggedInUser && loggedInUser.username) { %>
+                        <li class="nav-item active"><a href="/home" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="/ngo" class="nav-link">NGOs</a></li>
+                        <li class="nav-item"><a href="/home/about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="/home/cause" class="nav-link">Causes</a></li>
+                        <li class="nav-item"><a href="/home/blog" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="/home/gallary" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="/home/contact" class="nav-link">Contact</a></li>
+                        <li class="nav-item cta"><a href="/donate" class="nav-link">Donate</a></li>
+                        <li class="nav-item"><a href="/" class="nav-link" onclick="logout()">Logout</a></li>
+                        <% } else { %>
+                            <li class="nav-item active"><a href="/home" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="/ngo" class="nav-link">NGOs</a></li>
+                            <li class="nav-item"><a href="/home/about" class="nav-link">About</a></li>
+                            <li class="nav-item"><a href="/home/cause" class="nav-link">Causes</a></li>
+                            <li class="nav-item"><a href="/home/blog" class="nav-link">Blog</a></li>
+                            <li class="nav-item"><a href="/home/gallary" class="nav-link">Gallery</a></li>
+                            <li class="nav-item"><a href="/home/contact" class="nav-link">Contact</a></li>
+                            <li class="nav-item cta"><a href="/donate" class="nav-link">Donate</a></li>
+                            <li class="nav-item"><a href="/" class="nav-link">Login</a></li>
                             <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="hero-wrap js-fullheight">
+        <div class="home-slider js-fullheight owl-carousel">
+            <div class="slider-item js-fullheight" style="background-image:url(images/bg_1.jpg);">
+                <div class="overlay-1"></div>
+                <div class="overlay-2"></div>
+                <div class="overlay-3"></div>
+                <div class="overlay-4"></div>
+                <div class="container">
+                    <div class="row no-gutters slider-text js-fullheight align-items-center">
+                        <div class="col-md-10 col-lg-7 ftco-animate">
+                            <div class="text w-100">
+                                <h2>Help the poor in need</h2>
+                                <h1 class="mb-3">Lend the helping hand get involved</h1>
+                                <div class="d-flex meta">
+                                    <div class="">
+                                        <p class="mb-0"><a href="volunteer.html"
+                                                class="btn btn-secondary py-3 px-2 px-md-4">Become A Volunteer</a></p>
+                                    </div>
+                                    <a href="#" class="d-flex align-items-center button-link">
+                                        <div class="button-video d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-play"></span>
+                                        </div>
+                                        <span>Watch our video</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-item js-fullheight" style="background-image:url(images/bg_2.jpg);">
+                <div class="overlay-1"></div>
+                <div class="overlay-2"></div>
+                <div class="overlay-3"></div>
+                <div class="overlay-4"></div>
+                <div class="container">
+                    <div class="row no-gutters slider-text js-fullheight align-items-center">
+                        <div class="col-md-10 col-lg-7 ftco-animate">
+                            <div class="text w-100">
+                                <h2>Raising Hope</h2>
+                                <h1 class="mb-3">Discover Non-Profit Charity Platform</h1>
+                                <div class="d-flex meta">
+                                    <div class="">
+                                        <p class="mb-0"><a href="volunteer.html"
+                                                class="btn btn-secondary py-3 px-2 px-md-4">Become A Volunteer</a></p>
+                                    </div>
+                                    <a href="#" class="d-flex align-items-center button-link">
+                                        <div class="button-video d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-play"></span>
+                                        </div>
+                                        <span>Watch our video</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-item js-fullheight" style="background-image:url(images/bg_3.jpg);">
+                <div class="overlay-1"></div>
+                <div class="overlay-2"></div>
+                <div class="overlay-3"></div>
+                <div class="overlay-4"></div>
+                <div class="container">
+                    <div class="row no-gutters slider-text js-fullheight align-items-center">
+                        <div class="col-md-10 col-lg-7 ftco-animate">
+                            <div class="text w-100">
+                                <h2>Raising Hope</h2>
+                                <h1 class="mb-3">Giving Hope to the Homeless People</h1>
+                                <div class="d-flex meta">
+                                    <div class="">
+                                        <p class="mb-0"><a href="volunteer.html"
+                                                class="btn btn-secondary py-3 px-2 px-md-4">Become A Volunteer</a></p>
+                                    </div>
+                                    <a href="#" class="d-flex align-items-center button-link">
+                                        <div class="button-video d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-play"></span>
+                                        </div>
+                                        <span>Watch our video</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb img">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 order-md-last d-flex align-items-stretch">
+                    <div class="donation-wrap">
+                        <div class="total-donate d-flex align-items-center">
+                            <span class="fa flaticon-cleaning"></span>
+                            <h4>Donation Campaign <br>are running</h4>
+                            <p class="d-flex align-items-center">
+                                <span>$</span>
+                                <span class="number" data-number="24781">0</span>
+                            </p>
+                        </div>
+                        <form action="#" class="appointment">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="name">Full Name</label>
+                                        <div class="input-wrap">
+                                            <div class="icon"><span class="fa fa-user"></span></div>
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="name">Email Address</label>
+                                        <div class="input-wrap">
+                                            <div class="icon"><span class="fa fa-paper-plane"></span></div>
+                                            <input type="email" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="name">Select Donation Category</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                                                <select name="" id="" class="form-control">
+                                                    <option value=""></option>
+                                                    <option value="">For Children</option>
+                                                    <option value="">For Foods & Water</option>
+                                                    <option value="">For Education</option>
+                                                    <option value="">For Medical</option>
+                                                    <option value="">For Rohingya People</option>
+                                                    <option value="">For Eid Festival</option>
+                                                    <option value="">For Gift</option>
+                                                    <option value="">For Foods</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="name">Amount</label>
+                                        <div class="input-wrap">
+                                            <div class="icon"><span class="fa fa-money"></span></div>
+                                            <input type="text" class="form-control"
+                                                placeholder="BDT 500 (Minimum Amount)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="name">Payment Method</label>
+                                        <div class="d-lg-flex">
+                                            <div class="form-radio mr-3">
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="radio-input" checked>
+                                                        <span class="checkmark"></span>
+                                                        <span class="fill-control-description">Credit Card</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-radio mr-3">
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="radio-input">
+                                                        <span class="checkmark"></span>
+                                                        <span class="fill-control-description">Paypal</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-radio">
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="radio-input">
+                                                        <span class="checkmark"></span>
+                                                        <span class="fill-control-description">Payoneer</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="submit" value="Donate Now" class="btn btn-secondary py-3 px-4">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-7 wrap-about py-5">
+                    <div class="heading-section pr-md-5 pt-md-5">
+                        <span class="subheading">Welcome to GiveHope</span>
+                        <h2 class="mb-4">We are here to help everyone in need</h2>
+                        <p>GiveHope connects nonprofits, donors and companies in nearly every country in the world. We
+                            help fellow nonprofits access the funding, tools, training, and support they need to serve
+                            their communities.</p>
+                    </div>
+                    <div class="row my-md-5">
+                        <div class="col-md-6 d-flex counter-wrap">
+                            <div class="block-18 d-flex">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="flaticon-volunteer"></span>
+                                </div>
+                                <div class="desc">
+                                    <div class="text">
+                                        <strong class="number" data-number="70">0</strong>
+                                    </div>
+                                    <div class="text">
+                                        <span>Volunteers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex counter-wrap">
+                            <div class="block-18 d-flex">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="flaticon-piggy-bank"></span>
+                                </div>
+                                <div class="desc">
+                                    <div class="text">
+                                        <strong class="number" data-number="15500">0</strong>
+                                    </div>
+                                    <div class="text">
+                                        <span>Trusted Funds</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p><a href="#" class="btn btn-secondary btn-outline-secondary">Become A Volunteer</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-md-3 d-flex align-items-stretch">
+                    <div class="services">
+                        <div class="text text-center bg-secondary">
+                            <h3>Become a <br>Volunteer</h3>
+                            <p>Nonprofits around the world apply and join GiveHope to access more funding, to build new
+                                skills, and to make important connections. Join Us.</p>
+                        </div>
+                        <div class="img border-2" style="background-image: url(images/services-1.jpg);">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-volunteer"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-stretch">
+                    <div class="services">
+                        <div class="text text-center bg-tertiary">
+                            <h3>Quick <br>Fundraising</h3>
+                            <p>People like you give to your favorite projects; you feel great when you get updates about
+                                how your money is put to work by trusted organizations.</p>
+                        </div>
+                        <div class="img border-3" style="background-image: url(images/services-2.jpg);">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-piggy-bank"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-stretch">
+                    <div class="services">
+                        <div class="text text-center bg-primary">
+                            <h3>Donated<br> By Companies</h3>
+                            <p>Generous companies and their employees further support high-impact projects with
+                                donations and grants, helping local communities thrive.</p>
+                        </div>
+                        <div class="img border-1" style="background-image: url(images/services-3.jpg);">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-donation"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-stretch">
+                    <div class="services">
+                        <div class="text text-center bg-quarternary">
+                            <h3>Get <br>Involved</h3>
+                            <p>Nonprofits have the funding they need to listen to feedback and try out new ways to work;
+                                communities all over the globe get more awesome! GiveHope!!</p>
+                        </div>
+                        <div class="img border-4" style="background-image: url(images/services-4.jpg);">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-ecological"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pb">
+        <div class="container">
+            <div class="row justify-content-center pb-5 mb-3">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <span class="subheading">Our Causes</span>
+                    <h2>Donate to charity causes around the world</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="causes causes-2 text-center ftco-animate">
+                        <a href="#" class="img w-100" style="background-image: url(images/causes-1.jpg);"></a>
+                        <div class="text p-3">
+                            <h2><a href="#">Save the poor children from hunger</a></h2>
+                            <p>Save the Children Emergency Statement Bangladesh Floods</p>
+                            <div class="goal mb-4">
+                                <p><span>$8,500</span> to go</p>
+                                <div class="progress" style="height:20px">
+                                    <div class="progress-bar progress-bar-striped" style="width:70%; height:20px">70%
+                                    </div>
+                                </div>
+                            </div>
+                            <p><a href="#" class="btn btn-light w-100">Donate Now</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="causes causes-2 text-center ftco-animate">
+                        <a href="#" class="img w-100" style="background-image: url(images/causes-2.jpg);"></a>
+                        <div class="text p-3">
+                            <h2><a href="#">Help save children in Bangladesh</a></h2>
+                            <p>Bangladesh is one of the world’s most densely populated countries. Roughly the size of
+                                Florida, it is home to over 160 million people, compared to Florida’s 21 million.</p>
+                            <div class="goal mb-4">
+                                <p><span>$3,800</span> to go</p>
+                                <div class="progress" style="height:20px">
+                                    <div class="progress-bar progress-bar-striped" style="width:82%; height:20px">82%
+                                    </div>
+                                </div>
+                            </div>
+                            <p><a href="#" class="btn btn-light w-100">Donate Now</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="causes causes-2 text-center ftco-animate">
+                        <a href="#" class="img w-100" style="background-image: url(images/causes-3.jpg);"></a>
+                        <div class="text p-3">
+                            <h2><a href="#">Education for poor childrens</a></h2>
+                            <p>Education milestone for Rohingya refugee children as Myanmar curriculum pilot reaches
+                                first 10,000 children</p>
+                            <div class="goal mb-4">
+                                <p><span>$6,800</span> to go</p>
+                                <div class="progress" style="height:20px">
+                                    <div class="progress-bar progress-bar-striped" style="width:95%; height:20px">95%
+                                    </div>
+                                </div>
+                            </div>
+                            <p><a href="#" class="btn btn-light w-100">Donate Now</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="causes causes-2 text-center ftco-animate">
+                        <a href="#" class="img w-100" style="background-image: url(images/causes-4.jpg);"></a>
+                        <div class="text p-3">
+                            <h2><a href="#">Expanding education for Rohingya refugee children in Bangladesh</a></h2>
+                            <p>Bangladesh also hosts the world’s largest refugee camp in Cox’s Bazar, where hundreds of
+                                thousands of Rohingya children...</p>
+                            <div class="goal mb-4">
+                                <p><span>$5,500</span> to go</p>
+                                <div class="progress" style="height:20px">
+                                    <div class="progress-bar progress-bar-striped" style="width:75%; height:20px">75%
+                                    </div>
+                                </div>
+                            </div>
+                            <p><a href="#" class="btn btn-light w-100">Donate Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-counter" id="section-counter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-5 mb-md-0 text-center text-md-left">
+                    <h2 class="font-weight-bold" style="color: #fff; font-size: 22px;">We're on a mission to help all
+                        your problems</h2>
+                    <a href="#" class="btn btn-white btn-outline-white">Donate Now</a>
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18 text-center">
+                                <div class="text">
+                                    <strong class="number" data-number="88984">0</strong>
+                                </div>
+                                <div class="text">
+                                    <span>Donation Campaigns are running</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18 text-center">
+                                <div class="text">
+                                    <strong class="number" data-number="65000">0</strong>
+                                </div>
+                                <div class="text">
+                                    <span>Professional and kind volunteers</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18 text-center">
+                                <div class="text">
+                                    <strong class="number" data-number="77000">0</strong>
+                                </div>
+                                <div class="text">
+                                    <span>Funds we raised till now on site</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18 text-center">
+                                <div class="text">
+                                    <strong class="number" data-number="50">0</strong>
+                                </div>
+                                <div class="text">
+                                    <span>Dedicated Donors</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section testimony-section">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-7 heading-section heading-section-white text-center ftco-animate">
+                    <span class="subheading">Testimony</span>
+                    <h2>Happy Clients &amp; Feedbacks</h2>
+                </div>
+            </div>
+            <div class="row ftco-animate">
+                <div class="col-md-12">
+                    <div class="carousel-testimony owl-carousel">
+                        <div class="item">
+                            <div class="testimony-wrap d-flex">
+                                <div class="user-img" style="background-image: url(images/sifat2.jpg)">
+                                </div>
+                                <div class="text pl-4">
+                                    <span class="quote d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-quote-left"></i>
+                                    </span>
+                                    <p class="rate">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </p>
+                                    <p>"Always give without remembering and always receive without forgetting".</p>
+                                    <p class="name">S.B.M. Sifat</p>
+                                    <span class="position">CEO of GiveHope</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony-wrap d-flex">
+                                <div class="user-img" style="background-image: url(images/person_2.jpg)">
+                                </div>
+                                <div class="text pl-4">
+                                    <span class="quote d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-quote-left"></i>
+                                    </span>
+                                    <p class="rate">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </p>
+                                    <p>"Happiness doesn’t result from what we get, but from what we give".</p>
+                                    <p class="name">Mahbubul Hoque</p>
+                                    <span class="position">Businessman</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony-wrap d-flex">
+                                <div class="user-img" style="background-image: url(images/person_3.jpg)">
+                                </div>
+                                <div class="text pl-4">
+                                    <span class="quote d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-quote-left"></i>
+                                    </span>
+                                    <p class="rate">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </p>
+                                    <p>"We make a living by what we get. We make a life by what we give."</p>
+                                    <p class="name">Mohammad Jasim</p>
+                                    <span class="position">Businessman</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony-wrap d-flex">
+                                <div class="user-img" style="background-image: url(images/Sifat.jpg)">
+                                </div>
+                                <div class="text pl-4">
+                                    <span class="quote d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-quote-left"></i>
+                                    </span>
+                                    <p class="rate">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </p>
+                                    <p>"I have found that among its other benefits, giving liberates the soul of the
+                                        giver."</p>
+                                    <p class="name">Sifat Bin Mahbub</p>
+                                    <span class="position">Businessman</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony-wrap d-flex">
+                                <div class="user-img" style="background-image: url(images/businesswomen.jpg)">
+                                </div>
+                                <div class="text pl-4">
+                                    <span class="quote d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-quote-left"></i>
+                                    </span>
+                                    <p class="rate">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </p>
+                                    <p>"No one has ever become poor from giving".</p>
+                                    <p class="name">Monowara Begum</p>
+                                    <span class="position">Businesswoman</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center pb-5 mb-3">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <span class="subheading">Our Blog</span>
+                    <h2>Latest news from our blog</h2>
+                </div>
+            </div>
+            <div class="row d-flex">
+                <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                    <div class="blog-entry align-self-stretch">
+                        <a href="blog-single.html" class="block-20"
+                            style="background-image: url('images/image_1.jpg');">
+                        </a>
+                        <div class="text p-4">
+                            <div class="meta mb-2">
+                                <div><a href="#">April 20, 2022</a></div>
+                                <div><a href="#">Admin</a></div>
+                                <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+                            </div>
+                            <h3 class="heading"><a href="#">Foods &amp; Water Need in Rohingya Camp</a></h3>
+                            <p>Support Save the Children’s mission. Donate to help children in Bangladesh and around the
+                                world grow up healthy, educated and safe.</p>
+                            <p><a href="blog-single.html" class="btn btn-secondary">Read more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                    <div class="blog-entry align-self-stretch">
+                        <a href="blog-single.html" class="block-20"
+                            style="background-image: url('images/image_2.jpg');">
+                        </a>
+                        <div class="text p-4">
+                            <div class="meta mb-2">
+                                <div><a href="#">May 03, 2022</a></div>
+                                <div><a href="#">Admin</a></div>
+                                <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+                            </div>
+                            <h3 class="heading"><a href="#">Sponsor a Bangladeshi Child</a></h3>
+                            <p>Be the hero in the life of a child from Bangladesh. Sponsorship drives lasting change in
+                                children’s lives, families and communities.</p>
+                            <p><a href="blog-single.html" class="btn btn-secondary">Read more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                    <div class="blog-entry align-self-stretch">
+                        <a href="blog-single.html" class="block-20"
+                            style="background-image: url('images/image_3.jpg');">
+                        </a>
+                        <div class="text p-4">
+                            <div class="meta mb-2">
+                                <div><a href="#">May 20, 2022</a></div>
+                                <div><a href="#">Admin</a></div>
+                                <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+                            </div>
+                            <h3 class="heading"><a href="#">Shop Gift Catalog</a></h3>
+                            <p>Give a meaningful gift that will help transform children’s lives and futures in
+                                Bangladesh and beyond. There’s something for everyone!</p>
+                            <p><a href="blog-single.html" class="btn btn-secondary">Read more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                    <div class="blog-entry align-self-stretch">
+                        <a href="blog-single.html" class="block-20"
+                            style="background-image: url('images/image_4.jpg');">
+                        </a>
+                        <div class="text p-4">
+                            <div class="meta mb-2">
+                                <div><a href="#">May 23, 2022</a></div>
+                                <div><a href="#">Admin</a></div>
+                                <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+                            </div>
+                            <h3 class="heading"><a href="#">Foods &amp; Water Need in BD</a></h3>
+                            <p>We do need safe water for our peoples in flood area and in village area also.</p>
+                            <p><a href="blog-single.html" class="btn btn-secondary">Read more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div> <!-- .section -->
+
+
+    <div class="site-section fund-raisers">
+        <div class="container">
+            <div class="row mb-3 justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2>Latest Donations</h2>
+                    <p class="lead">Some Recent Donations Made By Peoples & Organizations.</p>
+                    <p class="mb-5"><a href="#" class="link-underline">View All Donations</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-5">
+                    <div class="person-donate text-center">
+                        <img src="images/Sifat.jpg" alt="Image placeholder" class="img-fluid">
+                        <div class="donate-info">
+                            <h2>Engr. Sifat</h2>
+                            <span class="time d-block mb-3">Donated Just now</span>
+                            <p>Donated <span class="text-success">BDT: 10k</span> <br> <em>for</em> <a href="#"
+                                    class="link-underline fundraise-item"> Water is Life. Clean Water in Sylhet</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-5">
+                    <div class="person-donate text-center">
+                        <img src="images/person_2.jpg" alt="Image placeholder" class="img-fluid">
+                        <div class="donate-info">
+                            <h2>Mahbubul Hoque</h2>
+                            <span class="time d-block mb-3">Donated 1 hour ago</span>
+                            <p>Donated <span class="text-success">BDT: 95K</span> <br> <em>for</em> <a href="#"
+                                    class="link-underline fundraise-item"> Children Needs Education</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-5">
+                    <div class="person-donate text-center">
+                        <img src="images/person_3.jpg" alt="Image placeholder" class="img-fluid">
+                        <div class="donate-info">
+                            <h2>Mohammad Jasim</h2>
+                            <span class="time d-block mb-3">Donated 4 hours ago</span>
+                            <p>Donated <span class="text-success">BDT: 25k</span> <br> <em>for</em> <a href="#"
+                                    class="link-underline fundraise-item">Need Shelter for Children in Noakhali Rohinga
+                                    Camp</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-5">
+                    <div class="person-donate text-center">
+                        <img src="images/Dr. Sara.jpg" alt="Image placeholder" class="img-fluid">
+                        <div class="donate-info">
+                            <h2>Dr. Sara</h2>
+                            <span class="time d-block mb-3">Donated 9 hours ago</span>
+                            <p>Donated <span class="text-success">BDT: 75k</span> <br> <em>for</em> <a href="#"
+                                    class="link-underline fundraise-item"> Water is Life. Clean Water in Bhola</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- .section -->
+
+    <section class="ftco-section ftco-no-pt">
+        <div class="container">
+            <div class="row justify-content-center pb-5 mb-3">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <span class="subheading">Volunteer</span>
+                    <h2>Our Expert Volunteer</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="volunteer">
+                        <div class="img" style="background-image: url(images/sifat2.jpg);"></div>
+                        <div class="text text-4">
+                            <h3>Sifat Bin Mahbub</h3>
+                            <span>Volunteer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="volunteer">
+                        <div class="img" style="background-image: url(images/team-2.jpg);"></div>
+                        <div class="text text-2">
+                            <h3>Al-Amin</h3>
+                            <span>Volunteer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="volunteer">
+                        <div class="img" style="background-image: url(images/team-3.jpg);"></div>
+                        <div class="text text-3">
+                            <h3>Sara Hoque</h3>
+                            <span>Volunteer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="volunteer">
+                        <div class="img" style="background-image: url(images/team-4.jpg);"></div>
+                        <div class="text text-1">
+                            <h3>M.T. Riya</h3>
+                            <span>Volunteer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-hireme bg-secondary">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-8 col-lg-8 d-flex align-items-center">
+                    <div class="w-100">
+                        <h2>Best Way to Make a Difference in the Lives of Others</h2>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 d-flex align-items-center justify-content-end">
+                    <p class="mb-0"><a href="volunteer.html" class="btn btn-primary py-3 px-4">Become A Volunteer</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                    <h2 class="footer-heading">GiveHope</h2>
+                    <p>Give Hope to the People Need Most. Join Us & Serve the people.</p>
+                    <ul class="ftco-footer-social p-0">
+                        <li class="ftco-animate"><a href="https://twitter.com" data-toggle="tooltip"
+                                data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.facebok.com" data-toggle="tooltip"
+                                data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.instagram.com" data-toggle="tooltip"
+                                data-placement="top" title="Instagram"><span class="fa fa-instagram"></span></a></li>
                     </ul>
-                </nav>
-            </header>
-        </div>
-    </div>
-    <!--section_2 slider part -->
-    <div class="slider_top">
-        <div class="fix container">
-            <div class="slider_container">
-                <script>
-                    var i = 0;
-                    var images = [];
-                    var time = 3000;
-                    images[0] = 'SliderImages/image5.png';
-                    images[1] = 'SliderImages/image4.jpg';
-                    images[2] = 'SliderImages/image10.jpg.crdownload';
-                    images[3] = 'SliderImages/image7.webp';
-                    images[4] = 'SliderImages/image9.avif';
-                    function changeImg() {
-                        document.slide.src = images[i];
-                        if (i < images.length - 1) {
-                            i++;
-                        }
-                        else {
-                            i = 0;
-                        }
-                        setTimeout("changeImg()", time);
-                    }
-                    window.onload = changeImg;
-                </script>
-                <img name="slide">
-            </div>
-        </div><br>
-    </div>
-    <!--Current Camp-->
-    <div class="fix container">
-        <div class="our_services"><br><br>
-            <h2 class="service_header">Current Camp</h2>
-        </div><br><br>
-        <div class="services">
-            <div class="service_container">
-                <img src="HomeImages/parking-solid.svg" alt="">
-                <h3>Donation</h3>
-                <p>
-
-                    Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris
-                    nisi ut aliquipop ex ea commo
-                    doconsequat, sunt in culpa qui
-                    officia deserunt mollit anim id .
-
-                </p>
-            </div>
-            <div class="service_container">
-                <img src="HomeImages/utensils-solid.svg" alt="">
-                <h3>Donate for child</h3>
-                <p>
-                    <small>
-                        Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris
-                        nisi ut aliquipop ex ea commo
-                        doconsequat, sunt in culpa qui
-                        officia deserunt mollit anim id .
-                    </small>
-                </p>
-            </div>
-            <div class="service_container">
-                <img src="HomeImages/dumbbell-solid.svg" alt="">
-                <h3>Donation</h3>
-                <p>
-
-                    Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris
-                    nisi ut aliquipop ex ea commo
-                    doconsequat, sunt in culpa qui
-                    officia deserunt mollit anim id .
-
-                </p>
-            </div>
-            <div class="service_container">
-                <img src="/" alt="">
-                <h3>Donation</h3>
-                <p>
-
-                    Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris
-                    nisi ut aliquipop ex ea commo
-                    doconsequat, sunt in culpa qui
-                    officia deserunt mollit anim id .
-
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!--section_4 footer part -->
-
-    <div class="container_full bg_footer">
-        <div class="fix container">
-            <footer>
-                <h1>Logo</h1>
-                <p>© 2022 host_name.com - All Rights Reserved</p>
-                <div class="social_area">
-                    <ul>
-                        <li class="facebook"><a href="#"></a></li>
-                        <li class="facebook"><a href="#"></a></li>
-                        <li class="facebook"><a href="#"></a></li>
-                        <li class="facebook"><a href="#"></a></li>
+                    <p><a href="#" class="btn btn-quarternary">Donate Now</a></p>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                    <h2 class="footer-heading">Latest News</h2>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="img mr-4 rounded" style="background-image: url(images/image_1.jpg);"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="blog-single.html">Foods & Water Need in Rohingya Camp</a></h3>
+                            <div class="meta">
+                                <div><a href="#">April 20, 2022</a></div>
+                                <div><a href="#">Admin</a></div>
+                                <div><a href="#">19</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="img mr-4 rounded" style="background-image: url(images/image_2.jpg);"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="blog-single.html">Sponsor a Bangladeshi Child</a></h3>
+                            <div class="meta">
+                                <div><a href="#">May 03, 2022</a></div>
+                                <div><a href="#">Admin</a></div>
+                                <div><a href="#">19</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
+                    <h2 class="footer-heading">Quick Links</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="py-2 d-block">Home</a></li>
+                        <li><a href="about.html" class="py-2 d-block">About</a></li>
+                        <li><a href="causes.html" class="py-2 d-block">Causes</a></li>
+                        <li><a href="blog.html" class="py-2 d-block">Blog</a></li>
+                        <li><a href="contact.html" class="py-2 d-block">Contact</a></li>
+                        <li><a href="donate.html" class="py-2 d-block">Donation</a></li>
                     </ul>
                 </div>
-            </footer>
+                <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                    <h2 class="footer-heading">Have a Questions?</h2>
+                    <div class="block-23 mb-3">
+                        <ul>
+                            <li><span class="icon icon-map-marker"></span><span class="text">7/B, Rankin Street, Wari,
+                                    Dhaka, BD</span></li>
+                            <li><a href="#"><span class="icon icon-phone"></span><span
+                                        class="text">+8801706139595</span></a></li>
+                            <li><a href="#"><span class="icon icon-envelope"></span><span
+                                        class="text">info@sifat.com</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-12 text-center">
+
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is
+                    made by <a href="https://sifat.com" target="_blank">Sifat</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </footer>
+
+
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" />
+        </svg></div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
     <script>
         // toast
         const logoutToast = Toastify({
@@ -363,6 +1003,7 @@
           }, 1000);
         }
       </script>
+
 </body>
 
 </html>
