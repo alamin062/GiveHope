@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (min-width: 1025px) {
+.h-custom {
+height: 100vh !important;
+}
+}
+    </style>
+     <script src="js/toastify.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="h-100 h-custom" style="background-color: #8fc4b7;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-8 col-xl-6">
+              <div class="card rounded-3">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+                  class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                  alt="Sample photo">
+                <div class="card-body p-4 p-md-5">
+                  <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info-NGO</h3>
+      
+                  <form class="px-md-2"
+                  method="post"
+                  action="/users"
+                  enctype="multipart/form-data"
+                  id="add-user-form"
+                  >
+      
+                    <div class="form-outline mb-4">
+                      <input type="text" name="name" id="form3Example1q" class="form-control" placeholder="Enter NGO name" />
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="email" name="email" id="form3Example1q" class="form-control" placeholder="Enter email" />
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="text" name="mobile" id="form3Example1q" class="form-control" placeholder="Enter Phone no" />
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="text" name="details"  id="form3Example1q" class="form-control" placeholder="NGO details" />
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="password" name="password" id="form3Example1q" class="form-control" placeholder="Enter password" />
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="file" name="avatar" id="form3Example1q" class="form-control" placeholder="NGO's Certification" />
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="hidden" name="role" value="NGO" id="form3Example1q" class="form-control" placeholder="" />
+                      </div>
+                      
+      
+                    <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+      
+                  </form>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        const modal = document.querySelector("#add-user-modal");
+        const form = document.querySelector("#add-user-form");
+      
+        // success toast
+        const successToast = Toastify({
+          text: "User was added successfully! Reloading the list...",
+          duration: 1000,
+        });
+      
+        function closeModal() {
+          modal.style.display = "none";
+        }
+        function openModal() {
+          modal.style.display = "block";
+        }
+      
+        // form submit handler
+        form.onsubmit = async function (event) {
+          event.preventDefault();
+      
+          // clear errors first
+          const errorPlaceholders = document.querySelectorAll("p.error");
+          for (let i = 0; i < errorPlaceholders.length; i++) {
+            errorPlaceholders[i].style.display = "none";
+          }
+      
+          const inputErrors = document.querySelectorAll("input.error");
+          if (inputErrors.length > 0) {
+            for (let j = 0; j < inputErrors.length; j++) {
+              inputErrors[j].classList.remove("error");
+            }
+          }
+      
+          // prepare the form data
+          const formData = new FormData(form);
+      
+          // send the request to server
+          let response = await fetch("/users", {
+            method: "POST",
+            body: formData,
+          });
+      
+          // get response
+          let result = await response.json();
+      
+          // handle error and response
+          if (result.errors) {
+            // errors
+            Object.keys(result.errors).forEach((fieldName) => {
+              // add error class to all inputs
+              form[fieldName].classList.add("error");
+      
+              // set all error placeholders (p tag) textContent
+              const errorPlaceholder = document.querySelector(`.${fieldName}-error`);
+              errorPlaceholder.textContent = result.errors[fieldName].msg;
+      
+              // make all placeholders visible
+              errorPlaceholder.style.display = "block";
+            });
+          } else {
+            // success
+            successToast.showToast();
+            closeModal();
+            document.querySelector("p.error").style.display = "none";
+      
+            // reload the page after 1 second
+            setTimeout(() => {
+              location.reload();
+            }, 1000);
+          }
+        };
+      </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: montserrat;
+        background: linear-gradient(120deg, #E6E9ED, #E6E9ED);
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .form_container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 700px;
+        height: 500px;
+        background: white;
+    }
+
+    .form_container h1 {
+       
+        color: white;
+        text-align: center;
+        font: bold;
+    }
+    #top{
+      position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    }
+
+    .form_container form {
+        box-sizing: border-box;
+    }
+    .form_container .logo {
+       background-color: #20BBA6;
+
+    }
+
+    .form_container .email_field input {
+        border: 1px solid gray;
+        padding: 20px;
+        width: 550px;
+        border-radius: 5px;
+        display: block;
+        margin: auto;
+    }
+
+    .form_container label {
+        margin-left: 55px;
+    }
+
+    .btn {
+        width: 210px;
+        padding: 15px;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        background-color: #20BBA6;
+        border: none;
+        color: white;
+        font: bold;
+        font-size: large;
+        display: block;
+        margin: auto;
+
+    }
+    .form_container .signup_page_link p{
+      display: block;
+      text-align: center;
+    }
+
+</style>
+<script src="./js/toastify.js"></script>
+</head>
+<body>
+  <div class="form_container">
+    <div id="top" class="logo"><h1>Login - NGO</h1></div><br><br><br>
+    <form method="post" action="/">
+       <br><br><br> <div class="email_field">
+            <input
+            type="text"
+            name="username"
+            placeholder="Enter mobile or email"
+            value="<%= data.username %>"
+            ><br><br>
+            <% if (errors.username) { %>
+              <p class="error show"><%= errors.username.msg %></p>
+            <% } %>
+        </div>
+        <div class="email_field">
+            <input type="password" name="password" placeholder="Enter password"><br><br>
+            <% if (errors.password) { %>
+              <p class="error show"><%= errors.password.msg %></p>
+            <% } %>
+    
+            <% if (errors.common) { %>
+              <p class="error show"><%= errors.common.msg %></p>
+            <% } %>
+        </div>
+        <input class="btn" type="submit" value="Login"><br>
+        <div class="signup_page_link">
+           <p>Not a member? Sign up now as <a href="/home/ngoregistration">NGO</a> or <a href="/home/userregistration">Donator</a></p>
+        </div><br><br>
+    </form>
+</div>
+  </div>
+</body>
+</html>

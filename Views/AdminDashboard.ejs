@@ -1,0 +1,340 @@
+<% if (loggedInUser && loggedInUser.username) { %>
+	<!DOCTYPE html>
+<html lang="ru">
+	
+<head>
+	<meta charset="utf-8">
+	
+	<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<title>Admin panel</title>
+
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+
+	<base href="">
+
+	<!-- Font Awesome -->
+	<!-- <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet"> -->
+	<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"> -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet">
+	<!-- Bootstrap core CSS -->
+	<link href="/admin/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="/admin/css/mdb.min.css" rel="stylesheet">
+
+	<!-- User Style -->
+	<link href="/admin/css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="grey lighten-2">
+
+	<header>
+		<!-- Main menu -->
+		<!-- <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar"> -->
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light grey lighten-3 scrolling-navbar">
+			<div class="container-fluid">
+				<a href="#!" class="navbar-brand waves-effect"><img src="/admin/img/d_logo_mini.png" alt="Logo dashboard" class="img-fluid w-50"></a>
+				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a href="#!" class="nav-link waves-effect"><i class="fas fa-home"></i> Home</a>
+						</li>
+						<li class="nav-item">
+							<a href="#!" class="nav-link waves-effect"><i class="fas fa-list-ul"></i> Categories</a>
+						</li>
+						<li class="nav-item">
+							<a href="#!" class="nav-link waves-effect"><i class="fas fa-folder-open"></i> Resources</a>
+						</li>
+						<li class="nav-item">
+							<a href="#!" class="nav-link waves-effect"><i class="far fa-file-alt"></i> Pages</a>
+						</li>
+						<li class="nav-item">
+							<a href="#!" class="nav-link waves-effect"><i class="fas fa-cog"></i> Settings</a>
+						</li>
+					</ul>
+
+					<ul class="navbar-nav nav-flex-icon">
+						<li class="nav-item mr-2">
+							<a href="#!" class="nav-link border border-light rounded waves-effect"><i class="fab fa-facebook-f"></i></a>
+						</li>
+						<li class="nav-item mr-2">
+							<a href="#!" class="nav-link border border-light rounded waves-effect"><i class="fab fa-twitter"></i></a>
+						</li>
+						<li class="nav-item mr-2">
+							<a href="https://github.com/ma1ex/mdbootstrap-admin-panel/" class="nav-link border border-light rounded waves-effect" target="_blank"><i class="fab fa-github mr-2"></i>GitHub</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- /.Main menu -->
+
+		<!-- Sidebar -->
+		<div class="sidebar-fixed position-fixed grey lighten-4">
+			<a href="#!" class="logo-wrapper waves-effect">
+				<img src="/admin/img/d_logo.png" alt="Logo" class="img-fluid">
+			</a>
+
+			<div class="list-group list-group-flush">
+				<% if (loggedInUser && loggedInUser.username) { %>
+					<a href="/home/admin" class="list-group-item list-group-item-action waves-effect active"><i class="fas fa-chart-pie mr-3"></i>Dashboard</a>
+				<a href="/home/profile" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-user mr-3"></i>Profile</a>
+				<a href="/home/massage" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-table mr-3"></i>Massage</a>
+				<a href="/home/project" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-map mr-3"></i>Project</a>
+				<a href="/" class="list-group-item list-group-item-action waves-effect grey lighten-4" onclick="logout()"><i class="fas fa-money-bill-alt mr-3"></i>Logout</a>
+					<% } else { %>
+						<a href="/home/admin" class="list-group-item list-group-item-action waves-effect active"><i class="fas fa-chart-pie mr-3"></i>Dashboard</a>
+				<a href="/home/profile" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-user mr-3"></i>Profile</a>
+				<a href="/home/massage" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-table mr-3"></i>Massage</a>
+				<a href="/home/project" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-map mr-3"></i>Project</a>
+				<a href="/" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fas fa-money-bill-alt mr-3"></i>Login</a>
+						<% } %>
+
+			</div>
+		</div>
+		<!-- /.Sidebar -->
+
+	</header>
+
+	<main class="pt-5 mx-lg-5">
+		
+		<!-- Breadcrumbs & Search -->
+		<div class="container-fluid mt-5 pl-0 pr-0">
+			<div class="card mb-4 wow fadeIn grey lighten-4">
+				<div class="card-body d-sm-flex justify-content-between">
+					<h4 class="mb-2 mb-sm-0 pt-1">
+						<a href="#!">Home</a>
+						<span>/</span>
+						<span>Dashboard</span>
+					</h4>
+
+					<form class="d-flex justify-content-center">
+						<input type="search" class="fom-control" placeholder="Type your query">
+						<button class="btn btn-primary btn-sm my-0 p" type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- /.Breadcrumbs & Search -->
+
+		<div class="row wow fadeIn">
+			<div class="col-md-12 mb-4">
+					
+				<!-- Alert/Info -->
+				<div class="alert alert-info alert-dismissible fade show z-depth-2" role="alert">
+					<h4 class="alert-heading">Welcome to the Dashboard!</h4>
+					<p><strong>Lorem ipsum dolor</strong> sit amet consectetur adipisicing elit. Nesciunt quia, adipisci in unde sint veritatis eveniet dolorum? Fugiat ea culpa autem, dolores voluptas, eos, vitae eaque amet alias eum perferendis.</p>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<!-- /.Alert/Info -->
+				
+			</div>
+		</div>
+		
+		<!-- Charts -->
+		<div class="row wow fadeIn">
+			
+			<div class="col-md-8 mb-4">
+				
+				<!-- Action buttons -->
+				<button type="button" class="btn btn-md btn-amber mb-4">
+					<i class="fas fa-eye pr-1"></i>
+					<span>Viewed pages</span>
+				</button>
+				<span class="counter counter-lg">22</span>
+				
+				<button type="button" class="btn btn-md btn-indigo mb-4">
+					<i class="fas fa-user pr-1"></i>
+					<span>Registered users</span>
+				</button>
+				<span class="counter counter-lg">22</span>
+				
+				<button type="button" class="btn btn-md btn-success mb-4">
+					<i class="fas fa-comment pr-1"></i>
+					<span>Comments</span>
+				</button>
+				<span class="counter counter-lg">22</span>
+				
+				<button type="button" class="btn btn-md btn-cyan mb-4">
+					<i class="fas fa-envelope pr-1"></i>
+					<span>Messages</span>
+				</button>
+				<span class="counter counter-lg">22</span>
+				
+				<button type="button" class="btn btn-md btn-unique mb-4">
+					<i class="fas fa-file-alt pr-1"></i>
+					<span>Posts</span>
+				</button>
+				<span class="counter counter-lg">12</span>
+				<!-- /.Action buttons -->
+				
+				<!-- Bar -->
+				
+				<!-- /.List group -->
+
+			</div>
+
+		</div>
+
+		<div class="row wow fadeIn">
+			<div class="col-md-12 mb-4">
+					
+				<!-- Info panels -->
+				<div class="card-deck">
+					<div class="card text-white bg-primary mb-3 mw-2">
+						<div class="card-header">Last post</div>
+						<div class="card-body">
+							<h5 class="card-title">Lorem ipsum dolor...</h5>
+							<p class="card-text text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit officia architecto...</p>
+						</div>
+					</div>
+
+					<div class="card text-white bg-secondary mb-3 mw-2">
+						<div class="card-header">Last comment</div>
+						<div class="card-body">
+							<h5 class="card-title">Lorem ipsum dolor...</h5>
+							<p class="card-text text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit officia architecto...</p>
+						</div>
+					</div>
+
+					<div class="card text-white bg-success mb-3 mw-2">
+						<div class="card-header">Last user</div>
+						<div class="card-body">
+							<h5 class="card-title">Lorem ipsum dolor...</h5>
+							<p class="card-text text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit officia architecto...</p>
+						</div>
+					</div>
+
+					<div class="card text-white bg-danger mb-3 mw-2">
+						<div class="card-header">Last search</div>
+						<div class="card-body">
+							<h5 class="card-title">Lorem ipsum dolor...</h5>
+							<p class="card-text text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit officia architecto...</p>
+						</div>
+					</div>
+				</div>
+				<!-- /.Info panels -->
+
+			</div>
+		</div>
+
+		<!-- Line chart & Google map -->
+		<div class="row wow fadeIn">
+			
+			<!-- Line chart-->
+			<div class="col-md-6 mb-4">
+
+				<div class="card">
+					<div class="card-header">Compare orders in last and current months</div>
+					<div class="card-body">
+						<canvas id="lineChart"></canvas>
+					</div>
+				</div>
+		
+			</div>
+			<!--/.Line chart-->
+
+			<!--Google map-->
+			<div class="col-md-6 mb-4">
+				
+				<div class="card">
+					<div class="card-header">Google map</div>
+					<div class="card-body">
+						<div id="map-container" class="map-container">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2350.2584350737907!2d27.554035848498415!3d53.909383392438954!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf93777c79c9%3A0x62adb7b31fd753eb!2z0J_Qu9Cw0YfRg9GJ0LjQuSDQsNC90LPQtdC7LdGF0YDQsNC90LjRgtC10LvRjA!5e0!3m2!1sru!2sus!4v1570396856411!5m2!1sru!2sus" width="600" height="450" frameborder="0"  allowfullscreen=""></iframe>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<!--/.Google map-->
+
+		</div>
+		<!-- /.Line chart & Google map -->
+
+	</main>
+
+	<!--Footer-->
+	<footer class="page-footer text-center font-small grey darken-1 mt-4 wow fadeIn">
+
+		<!--Call to action-->
+		<div class="pt-4">
+			<a class="btn btn-outline-white" href="https://github.com/ma1ex/mdbootstrap-admin-panel/archive/master.zip" role="button">Download Dashboard Template<i class="fa fa-download ml-2"></i></a>
+		</div>
+		<!--/.Call to action-->
+	
+		<hr class="my-4">
+	
+		<!-- Social icons -->
+		<div class="pb-4">
+			<a href="#!">
+				<i class="fab fa-facebook-f mr-3"></i>
+			</a>
+	
+			<a href="#!">
+				<i class="fab fa-twitter mr-3"></i>
+			</a>
+	
+			<a href="#!">
+				<i class="fab fa-youtube mr-3"></i>
+			</a>
+	
+			<a href="#!">
+				<i class="fab fa-google-plus mr-3"></i>
+			</a>
+	
+			<a href="#!">
+				<i class="fab fa-dribbble mr-3"></i>
+			</a>
+	
+			<a href="#!">
+				<i class="fab fa-pinterest mr-3"></i>
+			</a>
+	
+			<a href="#!">
+				<i class="fab fa-github mr-3"></i>
+			</a>
+	
+			<a href="#!">
+				<i class="fab fa-codepen mr-3"></i>
+			</a>
+		</div>
+		<!-- Social icons -->
+	
+		<!--Copyright-->
+		<div class="footer-copyright py-3">
+			© 2019 Copyright:
+			<a href="https://mdbootstrap.com/" target="_blank"> MDBootstrap.com </a>
+		</div>
+		<!--/.Copyright-->
+	
+	</footer>
+	<!--/.Footer-->
+
+<!-- END -->
+
+<!-- jQuery -->
+<script src="/admin/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<!-- Bootstrap tooltips -->
+<script src="/admin/js/popper.min.js" type="text/javascript"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="/admin/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- MDB core JavaScript -->
+<script src="admin/js/mdb.min.js" type="text/javascript"></script>
+
+<!-- User JavaScript -->
+<script src="/admin/js/common.js"></script>
+
+</body>
+</html>
+   
+    <% } else { %>
+		<%- include('./index.ejs'); %>
+    <% } %>

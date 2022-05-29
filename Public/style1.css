@@ -1,0 +1,121 @@
+/* !! NGO Section */
+:root {
+  --primary-bg-clr: #c3c2be;
+  --card-bg-hover: #97a8f4;
+  --btn-clr: #f66f77;
+  --btn-clr1: #ee8341;
+  --btn-hover-clr: #5ff6ff;
+  --font-clr-hover: #ffffff;
+
+  --populer-clr1: #aacc99;
+  --populer-clr2: #f54f67;
+  --populer-clr3: #2ff4ff;
+}
+
+/* ? Global styel */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+.area__definer {
+  max-width: 75rem;
+}
+
+.section {
+  border-bottom: 1px solid gray;
+  padding-block: 10rem;
+}
+.feature__wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 2rem;
+}
+.feature__card__container {
+  display: flex;
+
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.feature__card {
+  display: grid;
+  grid-auto-flow: column;
+  border-start-start-radius: 0.5rem;
+  border-start-end-radius: 0.5rem;
+  border-end-start-radius: 0.5rem;
+  border-end-end-radius: 0.5rem;
+  /* margin-bottom: 2rem; */
+}
+.feature__card__img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  gap: 2rem;
+}
+.feature__card__content {
+  background-color: var(--populer-clr1);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding-inline: 2rem;
+}
+.feature__card__title {
+  /* font-family: "My Soul", cursive; */
+  margin-bottom: clamp(0.5rem, 3vw, 1.5rem);
+  font-family: "Niconne", cursive;
+  /* font-family: "Nosifer", cursive; */
+  text-transform: capitalize;
+}
+.feature__btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 1rem;
+  padding: 0.5rem 2.5rem;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+
+  background-image: linear-gradient(
+    90deg,
+    var(--btn-clr),
+    var(--btn-hover-clr),
+    var(--btn-clr1)
+  );
+  /* transition: ; */
+  background-size: 500%;
+  background-position: left;
+  transition: background-position 1000ms ease-in-out;
+}
+:is(.feature__btn):hover,
+:focus {
+  background-position: right;
+}
+.feature__card__title {
+  font-size: clamp(1rem, 3vw, 3rem);
+}
+.feature__card__article {
+  font-size: clamp(0.6rem, 3vw, 0.9rem);
+}
+@media (max-width: 40rem) {
+  .feature__card {
+    grid-auto-flow: row;
+  }
+  .feature__card__content {
+    background-color: var(--card-bg-hover);
+    padding-block: 3rem;
+    /* padding-inline : 1; */
+  }
+}
