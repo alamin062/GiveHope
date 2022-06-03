@@ -19,10 +19,10 @@ const {
 
 router.get('/',decorateHtmlResponse("HomePage"),checkLogin,Controller.getHome);
 router.get('/contact',decorateHtmlResponse("Contact"),checkLogin,Controller.getContact);
-router.get('/admin',decorateHtmlResponse("Admin"),checkLogin,requireRole(["Admin"]),Controller.getAdmin);
-router.get('/profile',decorateHtmlResponse("Profile"),checkLogin,requireRole(["Admin"]),Controller.getProfile);
-router.get('/massage',decorateHtmlResponse("Massage"),checkLogin,requireRole(["Admin"]),Controller.getMassage);
-router.get('/project',decorateHtmlResponse("Project"),checkLogin,requireRole(["Admin"]),Controller.getProject);
+router.get('/admin',decorateHtmlResponse("Admin"),checkLogin,/*requireRole(["Admin"])*/ Controller.getAdmin);
+router.get('/profile',decorateHtmlResponse("Profile"),checkLogin,/*requireRole(["Admin"])*/ Controller.getProfile);
+router.get('/massage',decorateHtmlResponse("Massage"),checkLogin,/*requireRole(["Admin"])*/ Controller.getMassage);
+router.get('/project',decorateHtmlResponse("Project"),checkLogin,/*requireRole(["Admin"])*/ Controller.getProject);
 router.get('/blog',decorateHtmlResponse("Blog"),Controller.getBlog);
 router.get('/cause',decorateHtmlResponse("Cause"),checkLogin,Controller.getCause);
 router.get('/gallary',decorateHtmlResponse("HomePage"),Controller.getGallary);
@@ -34,7 +34,9 @@ router.get('/massage/:id', Controller.getSingleMassage);
 router.get('/deleteMassage/:id',Controller.DeleteMassage);
 router.get('/deleteproject/:id',Controller.DeleteProject);
 router.post('/updateproject/:id',Controller.updateProject);
-router.post('/postdonate',Controller.postDonate);
+router.post('/updateproject/:id',Controller.updateProject);
+router.post('/postdonate',decorateHtmlResponse("Donate"),Controller.postDonate);
+router.get('/getdonation',decorateHtmlResponse("Users"),Controller.getDonation);
 router.post('/checkout',decorateHtmlResponse("Users"),Controller.postPayment);
 router.get('/checkout',decorateHtmlResponse("Users"),Controller.getPayment);
 router.get('/adminregistration',decorateHtmlResponse("About"),Controller.getAdminRegistration);

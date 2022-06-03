@@ -110,7 +110,17 @@
               <div class="progress-bar progress-bar-striped" style="width:82%; height:20px">82%</div>
             </div>
           </div>
-          <p><a href="/donate" class="btn btn-light w-100">Donate Now</a></p>
+          <% var sum = 0; %>
+          <% for(var j=0; j<data2.length; j++) {%>
+            <% if (data[i]._id == data2[j].project_id ) { %>
+              <% sum+=parseInt(data2[j].amount); %>
+              <% }  %>
+          
+          <% } %>
+          <div class="text p-3"><p>Fund Rised: <%= sum %></p> </div>
+          <form action="/donate/postdonate/<%= data[i]._id %>" method="post" >
+            <button class="btn btn-light w-100" type="submit">Dontae Now</button>
+          </form>
         </div>
       </div>
     </div>

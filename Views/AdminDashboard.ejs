@@ -42,19 +42,13 @@
 				<div class="collapse navbar-collapse" id="navbarContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
-							<a href="#!" class="nav-link waves-effect"><i class="fas fa-home"></i> Home</a>
-						</li>
-						<li class="nav-item">
-							<a href="#!" class="nav-link waves-effect"><i class="fas fa-list-ul"></i> Categories</a>
+							<a href="/home" class="nav-link waves-effect"><i class="fas fa-home"></i> Home</a>
 						</li>
 						<li class="nav-item">
 							<a href="#!" class="nav-link waves-effect"><i class="fas fa-folder-open"></i> Resources</a>
 						</li>
 						<li class="nav-item">
 							<a href="#!" class="nav-link waves-effect"><i class="far fa-file-alt"></i> Pages</a>
-						</li>
-						<li class="nav-item">
-							<a href="#!" class="nav-link waves-effect"><i class="fas fa-cog"></i> Settings</a>
 						</li>
 					</ul>
 
@@ -66,7 +60,7 @@
 							<a href="#!" class="nav-link border border-light rounded waves-effect"><i class="fab fa-twitter"></i></a>
 						</li>
 						<li class="nav-item mr-2">
-							<a href="https://github.com/ma1ex/mdbootstrap-admin-panel/" class="nav-link border border-light rounded waves-effect" target="_blank"><i class="fab fa-github mr-2"></i>GitHub</a>
+							<a href="/home/userprofile" class="nav-link border border-light rounded waves-effect" target="_blank"><i class="fab fa-github mr-2"></i><%= loggedInUser.username %></a>
 						</li>
 					</ul>
 				</div>
@@ -84,13 +78,15 @@
 				<% if (loggedInUser && loggedInUser.username) { %>
 					<a href="/home/admin" class="list-group-item list-group-item-action waves-effect active"><i class="fas fa-chart-pie mr-3"></i>Dashboard</a>
 				<a href="/home/profile" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-user mr-3"></i>Profile</a>
-				<a href="/home/massage" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-table mr-3"></i>Massage</a>
+				<a href="/home/massage" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-table mr-3"></i>Messages</a>
 				<a href="/home/project" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-map mr-3"></i>Project</a>
+				<a href="/home/userprofile" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-map mr-3"></i>My Profile</a>
+				<a href="/home/adminregistration" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-map mr-3"></i>Add New Admin</a>
 				<a href="/" class="list-group-item list-group-item-action waves-effect grey lighten-4" onclick="logout()"><i class="fas fa-money-bill-alt mr-3"></i>Logout</a>
 					<% } else { %>
 						<a href="/home/admin" class="list-group-item list-group-item-action waves-effect active"><i class="fas fa-chart-pie mr-3"></i>Dashboard</a>
 				<a href="/home/profile" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-user mr-3"></i>Profile</a>
-				<a href="/home/massage" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-table mr-3"></i>Massage</a>
+				<a href="/home/massage" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-table mr-3"></i>Messages</a>
 				<a href="/home/project" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-map mr-3"></i>Project</a>
 				<a href="/" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fas fa-money-bill-alt mr-3"></i>Login</a>
 						<% } %>
@@ -139,6 +135,55 @@
 		</div>
 		
 		<!-- Charts -->
+		
+
+		<div class="row wow fadeIn">
+			<div class="col-md-12 mb-4">
+					
+				<!-- Info panels -->
+				
+				<div class="card-deck">
+					<div class="card text-white bg-primary mb-3 mw-2">
+						<div class="card-header">Total Fund Rise</div>
+						<div class="card-body">
+							<h2 class="card-title">$<%= data %></h2>
+					
+						</div>
+					</div>
+					<div class="card text-white bg-primary mb-3 mw-2">
+						<div class="card-header">Last post</div>
+						<div class="card-body">
+							<h6 class="card-title"><%= data2.project_title %></h6>
+							<p class="card-text text-white"><%= data2.project_details %></p>
+						</div>
+					</div>
+
+					<div class="card text-white bg-secondary mb-3 mw-2">
+						<div class="card-header">Last Message</div>
+						<div class="card-body">
+							<h6 class="card-title">Name: <%= data3.name %></h6>
+							<p class="card-text text-white">Massage: <%= data3.phone %></p>
+							<p class="card-text text-white">Massage: <%= data3.massage %></p>
+						</div>
+					</div>
+
+					<div class="card text-white bg-success mb-3 mw-2">
+						<div class="card-header">Last user</div>
+						<div class="card-body">
+							<h5 class="card-title">Name: <%= data4.name %></h5>
+							<p class="card-text text-white">Role: <%= data4.role %></p>
+							<p class="card-text text-white">Phone: <%= data4.phone %></p>
+							<p class="card-text text-white">Email: <%= data4.email %></p>
+						</div>
+					</div>
+
+					
+				</div>
+				<!-- /.Info panels -->
+
+			</div>
+		</div>
+
 		<div class="row wow fadeIn">
 			
 			<div class="col-md-8 mb-4">
@@ -153,12 +198,6 @@
 				<button type="button" class="btn btn-md btn-indigo mb-4">
 					<i class="fas fa-user pr-1"></i>
 					<span>Registered users</span>
-				</button>
-				<span class="counter counter-lg">22</span>
-				
-				<button type="button" class="btn btn-md btn-success mb-4">
-					<i class="fas fa-comment pr-1"></i>
-					<span>Comments</span>
 				</button>
 				<span class="counter counter-lg">22</span>
 				
@@ -183,62 +222,11 @@
 
 		</div>
 
-		<div class="row wow fadeIn">
-			<div class="col-md-12 mb-4">
-					
-				<!-- Info panels -->
-				<div class="card-deck">
-					<div class="card text-white bg-primary mb-3 mw-2">
-						<div class="card-header">Last post</div>
-						<div class="card-body">
-							<h5 class="card-title">Lorem ipsum dolor...</h5>
-							<p class="card-text text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit officia architecto...</p>
-						</div>
-					</div>
-
-					<div class="card text-white bg-secondary mb-3 mw-2">
-						<div class="card-header">Last comment</div>
-						<div class="card-body">
-							<h5 class="card-title">Lorem ipsum dolor...</h5>
-							<p class="card-text text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit officia architecto...</p>
-						</div>
-					</div>
-
-					<div class="card text-white bg-success mb-3 mw-2">
-						<div class="card-header">Last user</div>
-						<div class="card-body">
-							<h5 class="card-title">Lorem ipsum dolor...</h5>
-							<p class="card-text text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit officia architecto...</p>
-						</div>
-					</div>
-
-					<div class="card text-white bg-danger mb-3 mw-2">
-						<div class="card-header">Last search</div>
-						<div class="card-body">
-							<h5 class="card-title">Lorem ipsum dolor...</h5>
-							<p class="card-text text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit officia architecto...</p>
-						</div>
-					</div>
-				</div>
-				<!-- /.Info panels -->
-
-			</div>
-		</div>
-
 		<!-- Line chart & Google map -->
 		<div class="row wow fadeIn">
 			
 			<!-- Line chart-->
-			<div class="col-md-6 mb-4">
-
-				<div class="card">
-					<div class="card-header">Compare orders in last and current months</div>
-					<div class="card-body">
-						<canvas id="lineChart"></canvas>
-					</div>
-				</div>
 		
-			</div>
 			<!--/.Line chart-->
 
 			<!--Google map-->
@@ -248,7 +236,7 @@
 					<div class="card-header">Google map</div>
 					<div class="card-body">
 						<div id="map-container" class="map-container">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2350.2584350737907!2d27.554035848498415!3d53.909383392438954!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf93777c79c9%3A0x62adb7b31fd753eb!2z0J_Qu9Cw0YfRg9GJ0LjQuSDQsNC90LPQtdC7LdGF0YDQsNC90LjRgtC10LvRjA!5e0!3m2!1sru!2sus!4v1570396856411!5m2!1sru!2sus" width="600" height="450" frameborder="0"  allowfullscreen=""></iframe>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.645642405019!2d90.31240881445807!3d23.866713790241015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1f7ed5f4193%3A0x8159af0d71ff7374!2sEastern%20University!5e0!3m2!1sen!2sbd!4v1654192959275!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 						</div>
 					</div>
 				</div>

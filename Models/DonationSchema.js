@@ -8,6 +8,10 @@ const DonationSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    NGO_id:{
+        type: String,
+        required: true,
+    },
     email: {
         type: String,
         required: true,

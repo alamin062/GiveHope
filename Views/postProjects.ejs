@@ -31,7 +31,7 @@
         
                     <form class="px-md-2"
                     method="post"
-                    action="/users"
+                    action="/project"
                     enctype="multipart/form-data"
                     id="add-user-form"
                     >
@@ -40,16 +40,16 @@
                         <input type="text" name="project_title" id="form3Example1q" class="form-control" placeholder="Enter project title" />
                       </div>
                       <div class="form-outline mb-4">
-                          <input type="text" name="NGO_name" value="<%= loggedInUser.username %>" id="form3Example1q" class="form-control" placeholder="" />
+                          <input type="text" name="NGO_name" value="<%= loggedInUser.username %>" id="form3Example1q" class="form-control"  />
                         </div>
                         <div class="form-outline mb-4">
-                          <input type="text" name="NGO_id" value="loggedInUser.id" id="form3Example1q" class="form-control" placeholder="" />
+                          <input type="text" name="NGO_id" value="<%=loggedInUser.userid %>" id="form3Example1q" class="form-control"  />
                         </div>
                         <div class="form-outline mb-4">
                           <input type="text" name="phone" id="form3Example1q" class="form-control" placeholder="Enter Phone no" />
                         </div>
                         <div class="form-outline mb-4">
-                          <input type="hidden" name="status" value="pending" id="form3Example1q" class="form-control" placeholder="" />
+                          <input type="hidden" name="status" value="pending" id="form3Example1q" class="form-control"  />
                         </div>
                         <div class="form-outline mb-4">
                           <input type="text" name="project_details" value="" id="form3Example1q" class="form-control" placeholder="Project Details" />

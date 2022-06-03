@@ -26,10 +26,18 @@ class BackendController {
    static getAdminRegistration = (req, res) => {
       res.render("adminRegistration");
    }
-   static getUserProfile =(req,res)=>{
-      res.render("userProfile"); 
+   static getUserProfile = async(req, res) => {
+      try {
+         const result = await Donation.find();
+         const result2 = await Project.find();
+         res.render("userProfile", { data: result });
+      } catch (err) {
+         console.log(err);
       }
-
+   }
+   static getDonation = (req, res) => {
+      res.render("donationForm");
+   }
    static getPayment = async (req, res) => {
       try {
          const result = await Donation.find();
@@ -38,10 +46,12 @@ class BackendController {
          console.log(err);
       }
    }
+
    static getCause = async (req, res) => {
       try {
          const result = await Project.find();
-         res.render("cause", { data: result });
+         const result1 = await Donation.find();
+         res.render("cause", { data: result, data2: result1 });
       } catch (err) {
          console.log(err);
       }
@@ -118,8 +128,25 @@ class BackendController {
    static getContact = (req, res) => {
       res.render("contact");
    }
-   static getAdmin = (req, res) => {
-      res.render("AdminDashboard");
+   static getAdmin = async(req, res) => {
+      try {
+         const result = await Project.find();
+         const result1 = await Donation.find();
+         const result2 = await Contact.find();
+         const result3 = await User.find();
+         var sum =0;
+         for(var i=0;i<result1.length;i++)
+         {
+            sum+=parseInt(result1[i].amount);
+         }
+         var Lastpost= result[result.length-1];
+         var LastMassage = result2[result2.length-1];
+         var LastUser = result3[result3.length-1];
+         res.render("AdminDashboard", { data: sum, data2: Lastpost, data3:LastMassage, data4: LastUser});
+      } catch (err) {
+         console.log(err);
+      }
+
    }
    static getAboutPage = (req, res) => {
       res.render("about");
@@ -144,9 +171,11 @@ class BackendController {
    }
    static postDonate = async (req, res) => {
       try {
-         const { donator_name, email, phone, project_title, amount, project_id } = req.body;
+         const { donator_name, user_id, NGO_id, email, phone, project_title, amount, project_id } = req.body;
          const newDonation = new Donation({
             donator_name: donator_name,
+            user_id: user_id,
+            NGO_id: NGO_id,
             email: email,
             phone: phone,
             project_title: project_title,
@@ -174,6 +203,5 @@ class BackendController {
          console.log(err);
       }
    }
-
 }
 module.exports = BackendController;

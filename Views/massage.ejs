@@ -87,20 +87,16 @@
 				<div class="collapse navbar-collapse" id="navbarContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
-							<a href="#!" class="nav-link waves-effect"><i class="fas fa-home"></i> Home</a>
+							<a href="/home" class="nav-link waves-effect"><i class="fas fa-home"></i> Home</a>
 						</li>
-						<li class="nav-item">
-							<a href="#!" class="nav-link waves-effect"><i class="fas fa-list-ul"></i> Categories</a>
-						</li>
+						
 						<li class="nav-item">
 							<a href="#!" class="nav-link waves-effect"><i class="fas fa-folder-open"></i> Resources</a>
 						</li>
 						<li class="nav-item">
 							<a href="#!" class="nav-link waves-effect"><i class="far fa-file-alt"></i> Pages</a>
 						</li>
-						<li class="nav-item">
-							<a href="#!" class="nav-link waves-effect"><i class="fas fa-cog"></i> Settings</a>
-						</li>
+					
 					</ul>
 
 					<ul class="navbar-nav nav-flex-icon">
@@ -111,7 +107,7 @@
 							<a href="#!" class="nav-link border border-light rounded waves-effect"><i class="fab fa-twitter"></i></a>
 						</li>
 						<li class="nav-item mr-2">
-							<a href="https://github.com/ma1ex/mdbootstrap-admin-panel/" class="nav-link border border-light rounded waves-effect" target="_blank"><i class="fab fa-github mr-2"></i>GitHub</a>
+							<a href="/home/userprofile" class="nav-link border border-light rounded waves-effect" target="_blank"><i class="fab fa-github mr-2"></i><%= loggedInUser.username %></a>
 						</li>
 					</ul>
 				</div>
@@ -129,13 +125,15 @@
 				<% if (loggedInUser && loggedInUser.username) { %>
 					<a href="/home/admin" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fas fa-chart-pie mr-3"></i>Dashboard</a>
 				<a href="/home/profile" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-user mr-3"></i>Profile</a>
-				<a href="/home/massage" class="list-group-item list-group-item-action waves-effect active"><i class="fa fa-table mr-3"></i>Massage</a>
+				<a href="/home/massage" class="list-group-item list-group-item-action waves-effect active"><i class="fa fa-table mr-3"></i>Message</a>
 				<a href="/home/project" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-map mr-3"></i>Project</a>
+				<a href="/home/userprofile" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-map mr-3"></i>My Profile</a>
+				<a href="/home/adminregistration" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-map mr-3"></i>Add New Admin</a>
 				<a href="/" class="list-group-item list-group-item-action waves-effect grey lighten-4" onclick="logout()"><i class="fas fa-money-bill-alt mr-3"></i>Logout</a>
 					<% } else { %>
 						<a href="/home/admin" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fas fa-chart-pie mr-3"></i>Dashboard</a>
 				<a href="/home/profile" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-user mr-3"></i>Profile</a>
-				<a href="/home/massage" class="list-group-item list-group-item-action waves-effect active"><i class="fa fa-table mr-3"></i>Massage</a>
+				<a href="/home/massage" class="list-group-item list-group-item-action waves-effect active"><i class="fa fa-table mr-3"></i>Message</a>
 				<a href="/home/project" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fa fa-map mr-3"></i>Project</a>
 				<a href="/" class="list-group-item list-group-item-action waves-effect grey lighten-4"><i class="fas fa-money-bill-alt mr-3"></i>Login</a>
 						<% } %>
@@ -154,7 +152,7 @@
 					<h4 class="mb-2 mb-sm-0 pt-1">
 						<a href="#!">Home</a>
 						<span>/</span>
-						<span>Dashboard</span>
+						<span>Messages</span>
 					</h4>
 
 					<form class="d-flex justify-content-center">

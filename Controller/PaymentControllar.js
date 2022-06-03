@@ -8,6 +8,9 @@ require('dotenv').config()
 const PaymentSchema = require("../Models/PaymentSchema");
 const Payment = mongoose.model("Payment",PaymentSchema);
 
+const DonationSchema = require("../Models/DonationSchema");
+const Donation = mongoose.model("Donation", DonationSchema);
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -22,8 +25,9 @@ async function getPayment (req,res){
         })
   }
   async function getSSL (req,res){
+    const result = await Donation.find();
         const data = {
-          total_amount: 200,
+          total_amount: result[result.length-1].amount,
           currency: 'BDT',
           tran_id: 'REF123',
           success_url: `${process.env.ROOT}/ssl-payment-success`,
